@@ -1,31 +1,31 @@
 {
-  "name": "template",
-  "private": true,
+  "name": "@raydeck/make-appsync-client",
   "version": "1.0.0",
-  "description": "",
+  "description": "Make modern apollo client linked to appsync",
   "main": "lib/index.js",
   "bin": "lib/bin.js",
   "scripts": {
     "pre-commit": "(git-branch-is --not main || (set -u && echo $ALLOWMAIN)) && yarn test",
     "test": "tsc --noEmit",
-    "build": "tsc && chmod +x lib/bin.js",
-    "docs": "typedoc --theme markdown --readme none --mode file --excludeNotExported --includeVersion --out docstemp && commanderdoc markdown lib/bin.js -o docstemp/__cli.md --cli-name \"npx `jq -r .name package.json`\" && rm README.md ; mv docstemp/README.md docstemp/_library.md && cp TOP.md docstemp/README.md ; concat-md docstemp > README.md && rm -rf docstemp",
+    "build": "tsc",
+    "docs": "typedoc --theme markdown --readme none --mode file --excludeNotExported --includeVersion --out docstemp && rm README.md ; mv docstemp/README.md docstemp/_library.md && cp TOP.md docstemp/README.md ; concat-md docstemp > README.md && rm -rf docstemp",
     "prepublishOnly": "yarn build && yarn docs && git commit README.md -m \"docs: updating docs\" && git push"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rhdeck/base.git"
+    "url": "git+https://github.com/rhdeck/make-appsync-client.git"
   },
   "author": "Ray Deck",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rhdeck/base/issues"
+    "url": "https://github.com/rhdeck/make-appsync-client/issues"
   },
-  "homepage": "https://github.com/rhdeck/base#readme",
+  "homepage": "https://github.com/rhdeck/make-appsync-client#readme",
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "@types/node": "^14.0.27",
+    "@types/react": "^16.9.46",
     "commanderdoc": "^0.1.11",
     "concat-md": "^0.3.5",
     "git-branch-is": "^4.0.0",
@@ -39,7 +39,20 @@
     "lib"
   ],
   "dependencies": {
+    "@apollo/react-common": "^3.1.4",
+    "@aws-amplify/auth": "^3.3.4",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link": "^1.2.14",
+    "aws-amplify": "^3.0.23",
+    "aws-appsync-auth-link": "^2.0.2",
+    "aws-appsync-subscription-link": "^2.2.0",
     "commander": "^6.0.0",
+    "graphql": "^15.3.0",
     "install-peers-cli": "^2.2.0"
+  },
+  "peerDependencies": {
+    "amazon-cognito-identity-js": "^4.3.3",
+    "react": "^16.13.1"
   }
 }
