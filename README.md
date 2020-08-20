@@ -7,7 +7,7 @@
 <a name="_librarymd"></a>
 
 
-# @raydeck/make-appsync-client - v1.0.0
+# @raydeck/make-appsync-client - v1.0.2
 
 ## Index
 
@@ -21,7 +21,7 @@
 
 ▸ **makeClient**(`__namedParameters`: object): *object*
 
-Defined in src/index.tsx:14
+*Defined in [src/index.tsx:15](https://github.com/rhdeck/make-appsync-client/blob/97cc77d/src/index.tsx#L15)*
 
 **Parameters:**
 
