@@ -1,6 +1,6 @@
 {
   "name": "@raydeck/make-appsync-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Make modern apollo client linked to appsync",
   "main": "lib/index.js",
   "bin": "lib/bin.js",
